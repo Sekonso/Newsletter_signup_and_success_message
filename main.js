@@ -5,12 +5,13 @@ const dismiss = document.querySelector(".dismiss");
 const emailLink = document.querySelector(".email-link");
 const emailInput = document.querySelector("#email");
 
+// Checking the size of the viewport
 checkScreenSize();
-
 window.addEventListener("resize", () => {
   checkScreenSize();
 });
 
+// Submit event
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -18,6 +19,7 @@ form.addEventListener("submit", (e) => {
   const emailPattern =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+  // Email validation
   if (emailValue.match(emailPattern)) {
     signUp.classList.add("hidden");
     success.classList.remove("hidden");
@@ -35,15 +37,18 @@ form.addEventListener("submit", (e) => {
   }
 });
 
+// Changing display from success message to sign-up page
 dismiss.addEventListener("click", () => {
   signUp.classList.remove("hidden");
   success.classList.add("hidden");
 });
 
+// Adding email input to the success message
 function addEmail(value) {
   emailLink.innerText = value;
 }
 
+// Check viewport size and swap image
 function checkScreenSize() {
   if (window.innerWidth < 768) {
     document.querySelector("#image-mobile").classList.remove("hidden");
