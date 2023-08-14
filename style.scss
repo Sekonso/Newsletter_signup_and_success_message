@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Roboto:wght@400;700&display=swap");
+
+$Tomato: hsl(4, 100%, 67%);
+$Peach: hsl(337, 92%, 48%);
+$Dark-Slate-Grey: hsl(234, 29%, 20%);
+$Charcoal-Grey: hsl(235, 18%, 26%);
+$Grey: hsl(231, 7%, 60%);
+$White: hsl(0, 0%, 100%);
+$mobile-screen: "768px";
+$large-screen: "1440px";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: $Charcoal-Grey;
+
+  @media (width > 768px) {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+img {
+  width: 100%;
+}
+
+// Container
+.container {
+  background-color: white;
+  max-width: 768px;
+
+  @media (width > 768px) {
+    border-radius: 25px;
+  }
+}
+
+// Sign up section
+.sign-up {
+  @media (width > 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+}
+
+.content {
+  padding: 1rem;
+}
+
+.checklist {
+  display: flex;
+  align-items: flex-start;
+  margin: 15px 0;
+
+  & p {
+    line-height: 0.9;
+  }
+
+  & img {
+    width: 1.3rem;
+    margin-right: 0.5rem;
+  }
+}
+
+// Form
+.form {
+  margin: 2rem 0;
+
+  & div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & p {
+    font-size: 1rem;
+    color: red;
+  }
+
+  & label {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  & input {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 0.7rem;
+    font-family: "roboto";
+    border: 1px solid $Dark-Slate-Grey;
+    margin: 1rem 0;
+  }
+}
+
+// Success message
+.success-message {
+  @media (width < 768px) {
+    height: 768px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 1.5rem;
+  }
+
+  @media (width > 768px) {
+    height: 525px;
+    width: 525px;
+    padding: 3rem;
+  }
+
+  & a {
+    color: $Dark-Slate-Grey;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.3rem;
+  }
+
+  & a:hover {
+    color: $Tomato;
+  }
+
+  & img {
+    height: 80px;
+    width: 80px;
+  }
+
+  & .btn {
+    width: 100%;
+  }
+}
+
+// Attribution
+.attribution {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px;
+}
+.attribution a {
+  color: $Peach;
+}
+
+// Utilities
+.btn {
+  border: none;
+  border-radius: 10px;
+  background-color: $Dark-Slate-Grey;
+  color: white;
+  font-size: 1.1rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, rgb(235, 10, 96), $Tomato);
+  box-shadow: 0px 10px 15px hsla(4, 100%, 67%, 0.5);
+  border: none;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
+}
+
+.hidden {
+  display: none;
+}
